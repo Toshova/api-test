@@ -23,7 +23,6 @@
 
 
 <script>
-import axios from 'axios'
 
 export default {
   name: 'IndexPage',
@@ -33,7 +32,7 @@ export default {
     };
   },
   mounted() {
-    axios.get('https://jsonplaceholder.typicode.com/users')
+    this.$axios.get('https://jsonplaceholder.typicode.com/users')
     .then(response => (this.users = response.data))
     .catch(error => console.log(error));
   },
